@@ -54,10 +54,28 @@ animate();
 // 🎵 Reproducir sonido y mostrar contenido luego de unos segundos
 window.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("cumpleAudio");
-  audio.play().catch(() => {
-    // Si el navegador bloquea el autoplay, forzar con click
-    window.addEventListener("click", () => audio.play());
-  });
+  let reproducido = false;
+
+function reproducirAudio() {
+  if (!reproducido) {
+    audio.play().then(() => {
+      reproducido = true;
+    }).catch(() => {
+      // Si el navegador bloquea el autoplay, esperamos el primer click
+      window.addEventListener("click", clickHandler);
+    });
+  }
+}
+
+function clickHandler() {
+  if (!reproducido) {
+    audio.play();
+    reproducido = true;
+    window.removeEventListener("click", clickHandler);
+  }
+}
+
+reproducirAudio();
 
   setTimeout(() => {
     document.getElementById("intro").style.display = "none";
