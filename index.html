@@ -2,20 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>¡Feliz Cumple Dario!</title>
+  <title>¡Feliz cumple, Dario!</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <audio id="cumpleAudio" autoplay>
+  <!-- Audio oculto -->
+  <audio id="cumpleAudio">
     <source src="audio.wav" type="audio/wav">
-    Tu navegador no soporta audio.
   </audio>
 
+  <!-- Confeti -->
   <canvas id="confetti-canvas"></canvas>
 
-  <div class="contenido">
-    <h1>🎉 ¡Feliz Cumpleaños, Dario Jeremías Fernández Elgueta! 🎉</h1>
-    <p>Hoy es 17 de julio. ¡Que lo pases increíble! 🥳</p>
+  <!-- Pantalla de presentación -->
+  <div id="intro">
+    <h1>🎉 ¡Feliz cumple, Dario! 🎉</h1>
+  </div>
+
+  <!-- Contenido principal oculto al inicio -->
+  <div class="contenido" style="display: none;">
+    <h2>🎂 Dario Jeremías Fernández Elgueta 🎂</h2>
+    <p>Hoy es 17 de julio. ¡Que tengas un día épico! 🥳</p>
 
     <div class="galeria">
       <img src="foto1.jpg" alt="Foto 1">
@@ -23,6 +30,21 @@
       <img src="foto3.jpg" alt="Foto 3">
       <img src="foto4.jpg" alt="Foto 4">
     </div>
+
+    <hr>
+
+    <h3>🛠️ Cositas curiosas con HTML y JavaScript</h3>
+
+    <button onclick="cambiarColor()">Cambiar color de fondo</button><br><br>
+
+    <p>Contador: <span id="contador">0</span></p>
+    <button onclick="sumar()">Sumar</button><br><br>
+
+    <p>La hora actual es: <span id="hora"></span></p><br>
+
+    <p id="typewriter"></p><br>
+
+    <button onclick="sorpresa()">Botón sorpresa</button><br><br>
   </div>
 
   <script src="index.js"></script>
