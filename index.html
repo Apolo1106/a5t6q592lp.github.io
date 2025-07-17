@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Web para Mi Amigo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Bienvenido a la página de [Tu Nombre] & [Su Nombre]</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#recursos">Recursos HTML</a></li>
+      <li><a href="#proyectos">Mini-Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="galeria">
+    <h2>📸 Galería de recuerdos</h2>
+    <img src="fotos/nosotros1.jpg" alt="Foto 1" />
+    <img src="fotos/nosotros2.jpg" alt="Foto 2" />
+    <!-- Más imágenes -->
+  </section>
+
+  <section id="recursos">
+    <h2>📚 Recursos útiles de HTML</h2>
+    <pre><code>&lt;h1&gt;Este es un título&lt;/h1&gt;</code></pre>
+    <pre><code>&lt;a href="https://google.com"&gt;Ir a Google&lt;/a&gt;</code></pre>
+    <!-- Más ejemplos -->
+  </section>
+
+  <section id="proyectos">
+    <h2>💻 Mini-Proyectos</h2>
+    <p>Contador en JavaScript:</p>
+    <button onclick="contar()">Sumar</button>
+    <p id="contador">0</p>
+    <script>
+      let count = 0;
+      function contar() {
+        count++;
+        document.getElementById("contador").innerText = count;
+      }
+    </script>
+  </section>
+
+  <section id="contacto">
+    <h2>📬 Dejanos un mensaje</h2>
+    <form>
+      <input type="text" placeholder="Tu nombre"><br>
+      <textarea placeholder="Escribí algo..."></textarea><br>
+      <button>Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Hecho con ❤️ por [Tu Nombre]</p>
+  </footer>
+</body>
+</html>
