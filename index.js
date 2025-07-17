@@ -1,3 +1,4 @@
+// 🎊 Confeti animado
 const canvas = document.getElementById("confetti-canvas");
 const ctx = canvas.getContext("2d");
 
@@ -15,8 +16,7 @@ function Confetto() {
   this.x = Math.random() * canvas.width;
   this.y = Math.random() * -canvas.height;
   this.r = Math.random() * 6 + 4;
-  this.d = Math.random() * colors.length;
-  this.color = colors[Math.floor(this.d)];
+  this.color = colors[Math.floor(Math.random() * colors.length)];
   this.speed = Math.random() * 3 + 2;
   this.tilt = Math.random() * 10 - 5;
 
@@ -51,7 +51,57 @@ function animate() {
 }
 animate();
 
-// Reproducir el audio solo si el navegador lo permite
-window.addEventListener('click', () => {
-  document.getElementById("cumpleAudio").play().catch(() => {});
+// 🎵 Reproducir sonido y mostrar contenido luego de unos segundos
+window.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("cumpleAudio");
+  audio.play().catch(() => {
+    // Si el navegador bloquea el autoplay, forzar con click
+    window.addEventListener("click", () => audio.play());
+  });
+
+  setTimeout(() => {
+    document.getElementById("intro").style.display = "none";
+    document.querySelector(".contenido").style.display = "block";
+    document.body.style.overflow = "auto";
+    actualizarHora();
+    efectoEscritura("typewriter", "¡Esto es una web... hecha con código y cariño!");
+  }, 6000); // esperar 6 segundos
 });
+
+// 🕹️ Cosas divertidas
+let count = 0;
+function sumar() {
+  count++;
+  document.getElementById("contador").innerText = count;
+}
+
+function cambiarColor() {
+  const colores = ["#fff9f3", "#ffe4e1", "#f0fff0", "#e0ffff", "#fff0f5"];
+  document.body.style.backgroundColor =
+    colores[Math.floor(Math.random() * colores.length)];
+}
+
+function actualizarHora() {
+  const ahora = new Date();
+  document.getElementById("hora").innerText = ahora.toLocaleTimeString();
+  setTimeout(actualizarHora, 1000);
+}
+
+function efectoEscritura(id, texto, velocidad = 60) {
+  let i = 0;
+  function escribir() {
+    if (i < texto.length) {
+      document.getElementById(id).innerHTML += texto.charAt(i);
+      i++;
+      setTimeout(escribir, velocidad);
+    }
+  }
+  escribir();
+}
+
+function sorpresa() {
+  const btn = document.querySelector("button[onclick='sorpresa()']");
+  btn.style.position = "absolute";
+  btn.style.left = Math.random() * 90 + "%";
+  btn.style.top = Math.random() * 80 + "%";
+}
