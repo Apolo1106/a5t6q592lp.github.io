@@ -2,62 +2,29 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Web para Mi Amigo</title>
-  <link rel="stylesheet" href="index.css">
+  <title>¡Feliz Cumple Dario!</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Bienvenido a la página de [Tu Nombre] & [Su Nombre]</h1>
-  </header>
+  <audio id="cumpleAudio" autoplay>
+    <source src="audio.wav" type="audio/wav">
+    Tu navegador no soporta audio.
+  </audio>
 
-  <nav>
-    <ul>
-      <li><a href="#galeria">Galería</a></li>
-      <li><a href="#recursos">Recursos HTML</a></li>
-      <li><a href="#proyectos">Mini-Proyectos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+  <canvas id="confetti-canvas"></canvas>
 
-  <section id="galeria">
-    <h2>📸 Galería de recuerdos</h2>
-    <img src="fotos/nosotros1.jpg" alt="Foto 1" />
-    <img src="fotos/nosotros2.jpg" alt="Foto 2" />
-    <!-- Más imágenes -->
-  </section>
+  <div class="contenido">
+    <h1>🎉 ¡Feliz Cumpleaños, Dario Jeremías Fernández Elgueta! 🎉</h1>
+    <p>Hoy es 17 de julio. ¡Que lo pases increíble! 🥳</p>
 
-  <section id="recursos">
-    <h2>📚 Recursos útiles de HTML</h2>
-    <pre><code>&lt;h1&gt;Este es un título&lt;/h1&gt;</code></pre>
-    <pre><code>&lt;a href="https://google.com"&gt;Ir a Google&lt;/a&gt;</code></pre>
-    <!-- Más ejemplos -->
-  </section>
+    <div class="galeria">
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
+      <img src="foto4.jpg" alt="Foto 4">
+    </div>
+  </div>
 
-  <section id="proyectos">
-    <h2>💻 Mini-Proyectos</h2>
-    <p>Contador en JavaScript:</p>
-    <button onclick="contar()">Sumar</button>
-    <p id="contador">0</p>
-    <script>
-      let count = 0;
-      function contar() {
-        count++;
-        document.getElementById("contador").innerText = count;
-      }
-    </script>
-  </section>
-
-  <section id="contacto">
-    <h2>📬 Dejanos un mensaje</h2>
-    <form>
-      <input type="text" placeholder="Tu nombre"><br>
-      <textarea placeholder="Escribí algo..."></textarea><br>
-      <button>Enviar</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>Hecho con ❤️ por [Tu Nombre]</p>
-  </footer>
+  <script src="index.js"></script>
 </body>
 </html>
